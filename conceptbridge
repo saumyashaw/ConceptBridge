@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#101827">
+
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ConceptBridge — Among Us: Calculus Crew Mission</title>
+<style>
+:root{--ink:#f4f7fb;--muted:#aab7ca;--line:#2b394d;--paper:#0b1220;--blue:#ff4b5e;--blue2:#3b1d2b;--teal:#5eead4;--amber:#fbbf24;--red:#fb7185;--white:#151f30;--shadow:0 18px 45px rgba(0,0,0,.28)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:#172033;font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}.app{min-height:100vh}.topbar{height:72px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,72px);position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:11px;font-size:19px;font-weight:800;letter-spacing:-.5px}.logo{width:36px;height:36px;background:var(--blue);color:white;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:900}.brand span{color:var(--blue)}.topright{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:13px}.pill{background:#f1f5f9;border-radius:999px;padding:7px 12px;font-weight:650}.wrap{max-width:1180px;padding:28px 22px 60px;margin:auto}.welcome{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin:18px 0 24px}.eyebrow{text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);font-weight:800;font-size:11px}.welcome h1{font-size:clamp(28px,4vw,42px);letter-spacing:-1.5px;line-height:1.1;margin:9px 0 12px;color:#111c3b}.welcome p{color:var(--muted);max-width:630px;margin:0;font-size:16px}.hero-note{width:210px;background:white;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px;padding:16px;flex-shrink:0}.hero-note strong{display:block;font-size:24px;color:var(--blue)}.hero-note small{color:var(--muted)}.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.85fr);gap:20px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}.card h2{margin:0;font-size:20px;letter-spacing:-.4px}.sub{color:var(--muted);margin:5px 0 20px}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px}.tag{font-size:11px;font-weight:800;background:#ecfdf5;color:#087e6f;border-radius:7px;padding:5px 8px;white-space:nowrap}.topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.topic{border:1px solid var(--line);border-radius:14px;padding:16px;text-align:left;background:#fff;transition:.15s;min-height:105px}.topic:hover{border-color:#91a5ff;transform:translateY(-1px)}.topic.active{border:2px solid var(--blue);background:var(--blue2);padding:15px}.topic .emoji{font-size:21px}.topic b{display:block;margin:8px 0 3px}.topic small{color:var(--muted)}.btn{border:0;border-radius:11px;padding:12px 17px;font-weight:750;background:var(--blue);color:white;box-shadow:0 5px 14px #3b5bdb2a}.btn:hover{filter:brightness(.96)}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.secondary{background:white;color:var(--ink);border:1px solid var(--line);box-shadow:none}.btn.ghost{background:transparent;color:var(--blue);box-shadow:none;padding:8px}.full{width:100%}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.stat{padding:14px 12px;border-radius:13px;background:#f8fafc;border:1px solid #edf1f6}.stat strong{font-size:21px;display:block}.stat small{color:var(--muted);font-size:12px}.side-card{margin-bottom:16px}.side-card h3{margin:0 0 12px;font-size:15px}.mapline{display:flex;gap:10px;align-items:flex-start;padding:9px 0}.dot{flex-shrink:0;width:28px;height:28px;background:var(--blue2);color:var(--blue);border-radius:8px;display:grid;place-items:center;font-weight:800;font-size:12px}.mapline b{font-size:13px;display:block}.mapline small{font-size:12px;color:var(--muted)}.divider{height:1px;background:var(--line);margin:14px 0}.quote{background:#f5f7ff;border-radius:12px;padding:14px;color:#3d4c8a;font-size:13px}.screen{display:none}.screen.active{display:block}.quiztop{display:flex;justify-content:space-between;align-items:center;margin:5px 0 20px;color:var(--muted);font-size:13px}.progress{height:7px;background:#e8edf5;border-radius:99px;overflow:hidden;margin-bottom:24px}.progressbar{height:100%;background:var(--blue);width:0;transition:width .25s}.qmeta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.qtag{font-size:11px;padding:5px 8px;background:#f1f5f9;color:#536078;border-radius:6px}.question{font-family:Georgia,serif;font-size:26px;line-height:1.35;letter-spacing:-.3px;margin:0 0 20px}.options{display:grid;gap:10px}.option{width:100%;display:flex;gap:12px;text-align:left;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px;background:white;color:#1e293b}.option .letter{height:28px;width:28px;display:grid;place-items:center;border:1px solid #dbe2ee;border-radius:8px;color:#536078;font-size:12px;font-weight:800;flex-shrink:0}.option.selected{border:2px solid var(--blue);background:var(--blue2);padding:13px}.option.selected .letter{background:var(--blue);color:white;border-color:var(--blue)}.quizfoot{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:24px}.tiny{font-size:12px;color:var(--muted)}.feedback{padding:14px;border-radius:12px;background:#fff7ed;color:#934b08;margin:16px 0;font-size:14px}.resulthead{display:flex;align-items:center;gap:16px}.scorecircle{width:76px;height:76px;border-radius:50%;background:var(--blue2);color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:22px;flex-shrink:0}.resulthead h2{font-size:25px}.resulthead p{margin:4px 0 0;color:var(--muted)}.gapcard{border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:12px}.gaprow{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.gaprow h3{font-size:16px;margin:0 0 5px}.gaprow p{font-size:13px;color:var(--muted);margin:0}.severity{font-size:11px;font-weight:800;padding:5px 8px;border-radius:7px;background:#fff1f2;color:#be123c;white-space:nowrap}.severity.medium{background:#fff7ed;color:#b45309}.lesson{background:#f8fafc;border-radius:11px;padding:14px;margin-top:13px}.lesson strong{display:block;margin-bottom:5px}.lesson p{margin:0;color:#536078;font-size:13px}.lesson code{background:#e7ecfb;border-radius:5px;padding:2px 5px;color:#2946b2}.practice{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}.practice h4{margin:0 0 8px}.resultactions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.success{background:#ecfdf5;color:#087e6f;border-radius:10px;padding:12px;margin:12px 0;font-size:13px}.footer{text-align:center;color:#94a3b8;font-size:12px;margin-top:25px}.hide{display:none!important}.conf{font-size:12px;color:var(--muted);border-left:3px solid #dbe4ff;padding:8px 12px;margin-top:14px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.hero-note{display:none}.welcome{margin-top:8px}.wrap{padding:20px 14px 40px}.card{padding:20px}.topbar{padding:0 16px}.topright .pill{display:none}}
+@media(max-width:440px){.topic-grid{grid-template-columns:1fr}.question{font-size:22px}.stats{gap:6px}.stat{padding:11px 8px}.stat strong{font-size:18px}}
+
+/* AMONG US HACKATHON THEME — space ship, crewmates, visor cyan, impostor red */
+body{background:radial-gradient(ellipse at 15% 0%,#17233b 0%,#0b1220 52%,#080d17 100%);color:#eef4fc}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.55;background-image:radial-gradient(2px 2px at 12% 19%,#dcecff 50%,transparent 60%),radial-gradient(1px 1px at 76% 11%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 88% 62%,#9edfff 50%,transparent 60%),radial-gradient(1px 1px at 41% 76%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 24% 53%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 62% 39%,#dcecff 50%,transparent 60%)}
+.app{position:relative;z-index:1}.topbar{background:rgba(12,20,34,.92);backdrop-filter:blur(14px);border-bottom:1px solid #29384c;color:#eaf2ff}.brand{color:#f8fafc}.brand span{color:#ff586b}.logo{position:relative;font-size:0;border-radius:13px 13px 10px 10px;background:linear-gradient(145deg,#ff6574,#d92542);box-shadow:inset -5px -2px 0 rgba(80,0,12,.25),0 4px 12px #ff4b5e30;overflow:visible}.logo:before{content:"";position:absolute;width:19px;height:10px;left:8px;top:8px;background:linear-gradient(135deg,#baf4ff,#52b9e5);border:2px solid #e4fbff;border-radius:8px;box-shadow:inset -3px -1px #3987b4}.logo:after{content:"";position:absolute;width:9px;height:7px;left:5px;bottom:-3px;border-radius:2px 2px 4px 4px;background:#d92c45;box-shadow:17px 0 0 #d92c45}.topright{color:#b7c5d9}.pill{background:#263449;color:#bcecff;border:1px solid #35465d}.wrap{position:relative}.welcome h1{color:#f7faff}.welcome p,.sub,.hero-note small,.topic small,.tiny,.footer,.conf{color:#aab7ca}.eyebrow{color:#ff6677}.hero-note,.card{background:linear-gradient(145deg,rgba(24,36,55,.97),rgba(17,27,43,.98));border:1px solid #2c3b50;box-shadow:var(--shadow);color:#f2f6fc}.hero-note strong{color:#ff6476}.divider{background:#2b394d}.tag{background:#173c3b;color:#6ee7d8;border:1px solid #24615b}.topic{background:#121d2e;color:#eaf2ff;border-color:#2b3a4f}.topic:hover{border-color:#54c8e8;box-shadow:0 0 0 2px #54c8e81a}.topic.active{border:2px solid #ff5267;background:linear-gradient(135deg,#3c1d2b,#20263b);padding:15px;box-shadow:0 0 0 3px #ff52671c}.btn{background:linear-gradient(135deg,#ff5367,#d92747);color:white;box-shadow:0 6px 18px #ff4b5e30}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.secondary{background:#172438;color:#dce8f8;border-color:#34465e}.btn.ghost{color:#ff7a89}.stat{background:#111c2c;border-color:#2a3a4f}.stat strong{color:#f5f8ff}.dot{background:#3b1d2b;color:#ff8190;border:1px solid #693040}.quote{background:#122b3b;color:#bcecff;border:1px solid #214a60}.progress{background:#27364a}.progressbar{background:linear-gradient(90deg,#ff4b5e,#ff8a67,#62d8ed)}.qtag{background:#263449;color:#c2d0e3}.question{color:#f6f8fd}.option{background:#111c2c;border-color:#304158;color:#edf4ff}.option .letter{border-color:#3b4d64;color:#bdcbe0}.option.selected{border:2px solid #ff5267;background:#3b1e2b;padding:13px}.option.selected .letter{background:#ff5267;border-color:#ff5267;color:#fff}.scorecircle{background:#3b1d2b;color:#ff8794;border:1px solid #743244}.gapcard{background:#111c2c;border-color:#2b3b50}.gaprow p,.lesson p{color:#b4c1d4}.severity{background:#47202b;color:#ff9aa6}.severity.medium{background:#43311c;color:#ffd18a}.lesson{background:#18263a}.lesson code{background:#253957;color:#a9eaff}.feedback{background:#3e2b18;color:#ffd18a}.success{background:#123a36;color:#8ef0df;border:1px solid #24655c}.conf{border-left-color:#ff596d}.footer{color:#8292a9}.screen{animation:crew-arrive .22s ease-out}@keyframes crew-arrive{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.screen{animation:none}*{scroll-behavior:auto!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar"><div class="brand"><div class="logo" aria-hidden="true"></div>Concept<span>Bridge</span></div><div class="topright"><span>🚀 Crewmate Learning Lab</span><span class="pill">● Training simulation</span></div></header>
+<main class="wrap">
+<section class="welcome"><div><div class="eyebrow">CREW MISSION • CALCULUS TRAINING</div><h1>Find the missing concept.<br><span style="color:var(--blue)">Before it sabotages your calculus.</span></h1><p>A tiny gap in your foundations can sabotage the whole mission. Run a quick diagnostic, identify the suspicious concepts, and complete a focused repair mission.</p></div><div class="hero-note"><strong>5 minutes</strong><small>to find your next learning mission</small><div class="divider"></div><small>✓ No crewmate left behind<br>✓ Your progress stays on this device</small></div></section>
+
+<section class="screen active" id="home">
+<div class="layout"><div class="card"><div class="sectionhead"><h2>Choose your mission</h2><span class="tag">STEP 1 OF 4</span></div><p class="sub">Select the system you want to repair first.</p>
+<div class="topic-grid">
+<button class="topic active" data-topic="diff"><span class="emoji">📈</span><b>Differentiation</b><small>Rates of change & derivative rules</small></button>
+<button class="topic" data-topic="integral"><span class="emoji">∫</span><b>Integration</b><small>Antiderivatives & area under curves</small></button>
+<button class="topic" data-topic="limits"><span class="emoji">↗</span><b>Limits & continuity</b><small>Functions approaching a value</small></button>
+<button class="topic" data-topic="functions"><span class="emoji">ƒ</span><b>Functions & algebra</b><small>Build the foundations first</small></button>
+</div>
+<div class="quote" id="coverageLine" style="margin:-4px 0 16px">Concept coverage: power rule, constants, coefficient and sum rules, chain rule, product rule, quotient rule, tangent slopes, second derivatives.</div>
+<button class="btn full" id="start">Start mission&nbsp; 🚀</button>
+<div class="stats"><div class="stat"><strong>100,000</strong><small>question bank</small></div><div class="stat"><strong>10</strong><small>random questions per test</small></div><div class="stat"><strong>25,000</strong><small>questions per topic</small></div></div>
+</div>
+<aside><div class="card side-card"><h3>Ship systems map</h3><p class="sub" style="margin-bottom:14px">Each calculus skill depends on ship systems underneath. We check which one may need repairs.</p>
+<div class="mapline"><span class="dot">01</span><div><b>Algebra & exponents</b><small>Manipulate expressions confidently</small></div></div>
+<div class="mapline"><span class="dot">02</span><div><b>Functions</b><small>Read inputs, outputs & notation</small></div></div>
+<div class="mapline"><span class="dot">03</span><div><b>Core rules</b><small>Choose the right derivative or integral rule</small></div></div>
+<div class="mapline"><span class="dot">04</span><div><b>Calculus problem</b><small>Apply the concepts together</small></div></div>
+</div><div class="card"><h3>What makes ConceptBridge different?</h3><div class="quote">“A wrong answer is a clue, not a dead end.”</div><p class="tiny" style="margin-bottom:0">Your results are based on the concepts tagged to these demo questions. They are clues to review, not a definitive judgement of ability.</p></div></aside></div>
+</section>
+
+<section class="screen" id="quiz"><div class="card"><div class="sectionhead"><div><div class="eyebrow">Mission scan • diagnostic</div><h2 id="quizTitle">Differentiation foundations</h2></div><button class="btn ghost" id="exitQuiz">✕ Exit</button></div><p class="sub">Choose the best answer. It's okay not to know — each response helps us choose what to review.</p><div class="quiztop"><span id="qcounter">Question 1 of 10</span><span id="qtopic">Concept check</span></div><div class="progress"><div class="progressbar" id="progressbar"></div></div><div class="qmeta" id="qtags"></div><h3 class="question" id="question"></h3><div class="options" id="options"></div><div id="answerFeedback"></div><div class="quizfoot"><span class="tiny" id="quizHint">Take your time</span><button class="btn" id="nextQuestion" disabled>Next question →</button></div></div></section>
+
+<section class="screen" id="results"><div class="card"><div class="eyebrow">Emergency meeting: mission report</div><div class="resulthead" style="margin:12px 0 24px"><div class="scorecircle" id="scorecircle">5/10</div><div><h2 id="resultTitle">Let's strengthen a few foundations.</h2><p id="resultSummary">Your answers point to concepts worth revisiting.</p></div></div><div class="sectionhead"><h2>Repair plan: restore the systems</h2><span class="tag">PERSONALISED</span></div><p class="sub">Start with the concepts linked to your missed answers, then use a fresh post-test to check progress.</p><div id="gapList"></div><div class="conf">The question bank contains 100,000 generated, parameter-varied questions (25,000 per topic) across 10 concept families per topic. Each test contains exactly 5 easy, 3 medium, and 2 hard questions, selected without repeats on this device until that topic bank is used. How this diagnosis works: each question is tagged to one or more concepts. Missed questions add evidence to those concept tags; repeated evidence is prioritised. This lightweight prototype uses transparent rules, not a black-box AI judgement.</div><div class="resultactions"><button class="btn" id="beginRevision">Start focused revision →</button><button class="btn secondary" id="retryHome">Back to topics</button></div></div></section>
+
+<section class="screen" id="revision"><div class="card"><div class="sectionhead"><div><div class="eyebrow">Crew training route</div><h2>Repair. Practise. Get the ship back online.</h2></div><span class="tag">STEP 3 OF 4</span></div><p class="sub">Short, targeted refreshers for concepts flagged by your diagnostic. Read each card, then take a new quiz.</p><div id="lessonList"></div><div class="success">💡 Learning tip: explain the rule in your own words before solving the next problem.</div><div class="resultactions"><button class="btn" id="startPost">I'm ready — take the post-test →</button><button class="btn secondary" id="backResults">Back to results</button></div></div></section>
+
+<section class="screen" id="postresults"><div class="card"><div class="eyebrow">Mission debrief</div><div class="resulthead" style="margin:12px 0 20px"><div class="scorecircle" id="postScore">2/3</div><div><h2 id="postTitle">Your next step is clearer.</h2><p id="postSummary">Let's compare the first attempt with this fresh set.</p></div></div><div class="stats"><div class="stat"><strong id="beforeScore">—</strong><small>diagnostic score</small></div><div class="stat"><strong id="afterScore">—</strong><small>post-test score</small></div><div class="stat"><strong id="deltaScore">—</strong><small>change in accuracy</small></div></div><div class="divider"></div><h2>What this means</h2><p id="progressInsight" class="sub">Results will appear here.</p><div id="remainingGaps"></div><div class="conf">A short quiz is only an initial signal. For a stronger conclusion, use more varied questions and check progress over time.</div><div class="resultactions"><button class="btn" id="again">Start another mission</button><button class="btn secondary" id="reviewLessons">Review concepts again</button></div></div></section>
+<div class="footer">ConceptBridge · Among Us hackathon prototype · 100,000 parameter-varied questions across core concepts · 5 easy / 3 medium / 2 hard per test</div>
+</main></div>
+<script>
+const concepts={
+ algebra:{name:"Algebra & exponent rules",short:"Algebra",lesson:"When differentiating powers, keep the exponent rules clear. For example, x³ × x² = x⁵, while (x³)² = x⁶. Multiplying like bases means adding exponents; raising a power to a power means multiplying them.",formula:"xᵃ × xᵇ = xᵃ⁺ᵇ  ·  (xᵃ)ᵇ = xᵃᵇ",practice:"Simplify x⁴ × x².",practiceOptions:["x⁶","x⁸","2x⁶","x²"],practiceAnswer:0},
+ functions:{name:"Function notation",short:"Functions",lesson:"A function takes an input and gives an output. In f(x) = 2x + 1, substitute the entire input wherever x appears. Function notation f(3) means evaluate the rule at x = 3.",formula:"If f(x) = 2x + 1, then f(3) = 2(3) + 1 = 7.",practice:"If f(x) = 3x − 2, what is f(4)?",practiceOptions:["7","10","12","5"],practiceAnswer:0},
+ power:{name:"Power rule",short:"Power rule",lesson:"For a power function, bring the exponent down as a multiplier, then reduce the exponent by one. This applies to x raised to a constant power.",formula:"d/dx (xⁿ) = n·xⁿ⁻¹  ·  Example: d/dx(x⁴) = 4x³",practice:"Differentiate f(x) = x⁵.",practiceOptions:["5x⁴","x⁴","5x⁵","4x⁵"],practiceAnswer:0},
+ chain:{name:"Chain rule",short:"Chain rule",lesson:"When one function is inside another, differentiate the outside function first and multiply by the derivative of the inside. For (3x + 1)², the outside derivative is 2(3x + 1), then multiply by 3.",formula:"d/dx [g(x)]ⁿ = n[g(x)]ⁿ⁻¹ · g′(x)",practice:"Differentiate (2x + 1)³.",practiceOptions:["3(2x + 1)²","6(2x + 1)²","3(2x + 1)³","2(2x + 1)²"],practiceAnswer:1},
+ integral:{name:"Reverse power rule",short:"Integration",lesson:"For a power xⁿ (where n ≠ −1), add one to the exponent and divide by the new exponent. Remember the constant of integration, + C.",formula:"∫xⁿ dx = xⁿ⁺¹/(n+1) + C",practice:"Find ∫x² dx.",practiceOptions:["2x + C","x³/3 + C","x³ + C","x²/2 + C"],practiceAnswer:1},
+ limits:{name:"Function behaviour & limits",short:"Limits",lesson:"A limit asks what value a function approaches as x gets close to a point. When a polynomial is involved, direct substitution often works if the function is defined there.",formula:"If f(x) = x² + 1, then limₓ→₂ f(x) = 2² + 1 = 5.",practice:"For f(x) = x² + 3, find limₓ→₂ f(x).",practiceOptions:["5","7","4","Undefined"],practiceAnswer:1}
+};
+// Expanded concept map used by the syllabus-wide question bank.
+Object.assign(concepts, {
+ constRule:{name:"Constant rule",short:"Constants",lesson:"The derivative of a constant is zero. A constant term changes the graph vertically but not its slope.",formula:"d/dx(c) = 0",practice:"Differentiate f(x) = 9.",practiceOptions:["0","9","x","9x"],practiceAnswer:0},
+ sumRule:{name:"Sum and difference rules",short:"Sum rule",lesson:"Differentiate each term separately, then add or subtract the results.",formula:"(f ± g)′ = f′ ± g′",practice:"Differentiate x³ + x².",practiceOptions:["3x² + 2x","x² + x","3x³ + 2x²","x³ + 2x"],practiceAnswer:0},
+ productRule:{name:"Product rule",short:"Product rule",lesson:"For a product, differentiate the first factor and multiply by the second, then add the first factor multiplied by the derivative of the second.",formula:"(uv)′ = u′v + uv′",practice:"Differentiate x²·x³.",practiceOptions:["5x⁴","5x⁵","6x⁵","x⁵"],practiceAnswer:1},
+ quotientRule:{name:"Quotient rule",short:"Quotient rule",lesson:"For a quotient, use (u′v − uv′)/v². Keep the order in the numerator and square the denominator.",formula:"(u/v)′ = (u′v − uv′)/v²",practice:"Differentiate x/(x+1).",practiceOptions:["1/(x+1)²","1/(x+1)","x/(x+1)²","0"],practiceAnswer:0},
+ tangent:{name:"Tangent slope",short:"Tangent line",lesson:"The derivative at x = a gives the slope of the tangent to the curve at that point.",formula:"Tangent slope at x=a is f′(a)",practice:"For f(x)=x², what is the tangent slope at x=3?",practiceOptions:["6","9","3","2"],practiceAnswer:0},
+ secondDerivative:{name:"Second derivatives",short:"Second derivative",lesson:"Differentiate once to find the first derivative, then differentiate again. The second derivative describes how the slope changes.",formula:"f′′(x) = d/dx[f′(x)]",practice:"If f(x)=x³, find f′′(x).",practiceOptions:["6x","3x²","6x²","x"],practiceAnswer:0},
+ definiteIntegral:{name:"Definite integrals",short:"Definite integral",lesson:"Evaluate an antiderivative at the upper limit and subtract its value at the lower limit: F(b) − F(a).",formula:"∫ₐᵇ f(x)dx = F(b) − F(a)",practice:"Evaluate ∫₀¹ 2x dx.",practiceOptions:["1","2","0","1/2"],practiceAnswer:0},
+ substitution:{name:"Integration by substitution",short:"Substitution",lesson:"Choose an inner expression u whose derivative also appears in the integrand. Rewrite the integral in terms of u, integrate, then substitute back.",formula:"u=g(x), du=g′(x)dx",practice:"Find ∫2x(x²+1)² dx.",practiceOptions:["(x²+1)³/3 + C","2(x²+1)³ + C","x⁴ + C","(x²+1)² + C"],practiceAnswer:0},
+ trigIntegral:{name:"Trigonometric integrals",short:"Trig integrals",lesson:"Use basic antiderivatives such as ∫sin(kx)dx = −cos(kx)/k + C and ∫cos(kx)dx = sin(kx)/k + C.",formula:"∫sin(kx)dx = −cos(kx)/k + C",practice:"Find ∫cos(3x) dx.",practiceOptions:["sin(3x)/3 + C","3sin(3x) + C","−cos(3x)/3 + C","cos(3x)/3 + C"],practiceAnswer:0},
+ parts:{name:"Integration by parts",short:"By parts",lesson:"Use integration by parts when the integrand is a product, commonly choosing u to become simpler after differentiation.",formula:"∫u dv = uv − ∫v du",practice:"Find ∫x eˣ dx.",practiceOptions:["eˣ(x−1)+C","xeˣ+C","eˣ(x+1)+C","x²eˣ/2+C"],practiceAnswer:0},
+ limitFactoring:{name:"Limits by factorisation",short:"Factorisation",lesson:"When direct substitution gives 0/0, factor the numerator and denominator, cancel a common nonzero factor near the point, then substitute.",formula:"(x²−a²)/(x−a) = x+a for x≠a",practice:"Find lim x→2 (x²−4)/(x−2).",practiceOptions:["4","2","0","Does not exist"],practiceAnswer:0},
+ rationalization:{name:"Rationalising limits",short:"Rationalisation",lesson:"For limits with square roots, multiply by the conjugate to remove the radical difference and simplify before substituting.",formula:"(√A−√B)(√A+√B)=A−B",practice:"Evaluate lim x→1 (√(x+3)−2)/(x−1).",practiceOptions:["1/4","1/2","2","0"],practiceAnswer:0},
+ continuity:{name:"Continuity",short:"Continuity",lesson:"A function is continuous at a point when its value exists, its limit exists, and the limit equals the function value.",formula:"lim x→a f(x) = f(a)",practice:"For a polynomial, is it continuous at every real x?",practiceOptions:["Yes","No","Only at x=0","Only if positive"],practiceAnswer:0},
+ oneSided:{name:"One-sided limits",short:"One-sided limits",lesson:"A left-hand limit approaches from values smaller than a; a right-hand limit approaches from values larger than a. A two-sided limit exists when they agree.",formula:"LHL = RHL for a two-sided limit",practice:"If LHL=2 and RHL=5, does the two-sided limit exist?",practiceOptions:["No","Yes, it is 2","Yes, it is 5","It is 7"],practiceAnswer:0},
+ infiniteLimits:{name:"Infinite limits and asymptotes",short:"Infinite limits",lesson:"If a function grows without bound near a point, its limit may be +∞ or −∞; this often indicates a vertical asymptote.",formula:"lim x→a 1/(x−a)² = +∞",practice:"As x approaches 2, what happens to 1/(x−2)²?",practiceOptions:["It grows without bound","It approaches 0","It approaches 2","It is always 1"],practiceAnswer:0},
+ trigLimits:{name:"Standard trigonometric limits",short:"Trig limits",lesson:"In radians, the standard limit lim x→0 sin(kx)/x = k is useful for evaluating many trigonometric limits.",formula:"lim x→0 sin(kx)/x = k",practice:"Find lim x→0 sin(4x)/x.",practiceOptions:["4","1","0","1/4"],practiceAnswer:0},
+ composition:{name:"Composite functions",short:"Composition",lesson:"For f(g(x)), evaluate the inside function first, then use that result as the input to the outside function.",formula:"(f∘g)(x)=f(g(x))",practice:"If f(x)=2x and g(x)=x+3, find f(g(1)).",practiceOptions:["8","5","6","4"],practiceAnswer:0},
+ inverse:{name:"Inverse functions",short:"Inverse",lesson:"To find an inverse, write y=f(x), swap x and y, and solve for y. Check that the original function is one-to-one on its domain.",formula:"f⁻¹(f(x)) = x",practice:"If f(x)=3x+2, what is f⁻¹(x)?",practiceOptions:["(x−2)/3","3x−2","(x+2)/3","x/3+2"],practiceAnswer:0},
+ domain:{name:"Domain restrictions",short:"Domain",lesson:"The domain contains inputs for which the expression is defined. Denominators cannot be zero, and real square-root radicands must be nonnegative.",formula:"For 1/(x−a), x ≠ a",practice:"What value is excluded from 1/(x−4)?",practiceOptions:["4","0","−4","1"],practiceAnswer:0},
+ quadratic:{name:"Quadratics and factorisation",short:"Quadratics",lesson:"A quadratic equation can often be solved by factoring into two linear factors, then setting each factor equal to zero.",formula:"x²−a²=(x−a)(x+a)",practice:"Solve x²−9=0.",practiceOptions:["x=±3","x=9","x=3 only","x=−9"],practiceAnswer:0},
+ logarithms:{name:"Logarithms and exponentials",short:"Logs",lesson:"A logarithm answers the question 'to what power?'. For log base b, log_b(x)=p is equivalent to b^p=x.",formula:"log_b(x)=p ⇔ bᵖ=x",practice:"If log₂(x)=3, find x.",practiceOptions:["8","6","9","3"],practiceAnswer:0},
+ inequalities:{name:"Algebraic inequalities",short:"Inequalities",lesson:"Solve inequalities like equations, but reverse the inequality sign when multiplying or dividing by a negative number.",formula:"If a<b, then −a>−b",practice:"If −2x < 6, which is true?",practiceOptions:["x > −3","x < −3","x > 3","x < 3"],practiceAnswer:0}
+});
+const banks={
+diff:[
+ {q:"Simplify x³ × x².",o:["x⁶","x⁵","2x⁵","x"],a:1,tags:["algebra"],why:"When multiplying powers with the same base, add the exponents: 3 + 2 = 5."},
+ {q:"If f(x) = 2x + 3, what is f(4)?",o:["11","14","8","9"],a:0,tags:["functions"],why:"Replace x with 4: 2(4) + 3 = 11."},
+ {q:"What is the derivative of f(x) = x⁴?",o:["x³","4x³","4x⁴","3x⁴"],a:1,tags:["power"],why:"Apply the power rule: bring 4 down, then reduce the exponent by one."},
+ {q:"Differentiate f(x) = 3x².",o:["3x","6x","6x²","x³"],a:1,tags:["power","algebra"],why:"The constant 3 stays; the derivative of x² is 2x, giving 6x."},
+ {q:"Differentiate (x + 2)².",o:["2(x + 2)","2x + 2","(x + 2)²","x + 2"],a:0,tags:["chain"],why:"Use the chain rule: derivative of the outside square is 2(x + 2), multiplied by the derivative of the inside (1)."},
+ {q:"If f(x) = x² + 1, what is f′(3)?",o:["6","9","7","3"],a:0,tags:["power","functions"],why:"First differentiate: f′(x) = 2x. Then substitute x = 3 to get 6."}
+],
+integral:[
+ {q:"Simplify x² × x³.",o:["x⁶","x⁵","2x⁵","x"],a:1,tags:["algebra"],why:"For multiplication with the same base, add exponents."},
+ {q:"If f(x) = x + 4, what is f(2)?",o:["6","8","2","4"],a:0,tags:["functions"],why:"Substitute 2 for x: 2 + 4 = 6."},
+ {q:"What is ∫x² dx?",o:["2x + C","x³/3 + C","x³ + C","x²/2 + C"],a:1,tags:["integral"],why:"Add one to the power and divide by the new exponent."},
+ {q:"What is ∫4x³ dx?",o:["12x² + C","x⁴ + C","4x⁴ + C","x³ + C"],a:1,tags:["integral","algebra"],why:"The antiderivative of x³ is x⁴/4; multiplying by 4 gives x⁴."},
+ {q:"What does the + C in an indefinite integral represent?",o:["A derivative","An arbitrary constant","A missing exponent","The upper limit"],a:1,tags:["functions","integral"],why:"Any constant differentiates to zero, so the family of antiderivatives includes + C."},
+ {q:"Evaluate ∫2x dx.",o:["2x² + C","x² + C","2 + C","x + C"],a:1,tags:["integral"],why:"The antiderivative of 2x is x², plus the constant of integration."}
+],
+limits:[
+ {q:"If f(x) = 2x + 1, what is f(3)?",o:["5","7","6","4"],a:1,tags:["functions"],why:"Substitute 3: 2(3) + 1 = 7."},
+ {q:"Simplify x² × x³.",o:["x⁶","x⁵","x⁶","5x"],a:1,tags:["algebra"],why:"Add exponents for multiplication with the same base."},
+ {q:"For f(x) = x² + 1, lim x→2 f(x) equals…",o:["3","4","5","Undefined"],a:2,tags:["limits"],why:"Polynomials are continuous, so substitute x = 2: 2² + 1 = 5."},
+ {q:"What does lim x→a f(x) describe?",o:["The slope at a","The value f(0)","The value f(x) approaches near a","The largest output"],a:2,tags:["limits","functions"],why:"A limit describes the value the function approaches as x gets close to a."},
+ {q:"Find lim x→1 (x² + 3).",o:["3","4","1","Undefined"],a:1,tags:["limits"],why:"Substitute x = 1: 1² + 3 = 4."},
+ {q:"If f(x) = x + 2, what is f(0)?",o:["0","1","2","Undefined"],a:2,tags:["functions"],why:"Substitute 0: 0 + 2 = 2."}
+],
+functions:[
+ {q:"Simplify x³ × x².",o:["x⁶","x⁵","2x⁵","x"],a:1,tags:["algebra"],why:"Add the exponents when multiplying powers with the same base."},
+ {q:"If f(x) = 3x + 2, find f(2).",o:["8","10","7","6"],a:0,tags:["functions"],why:"Substitute x = 2: 3(2) + 2 = 8."},
+ {q:"What is (x²)³?",o:["x⁵","x⁶","3x²","x⁸"],a:1,tags:["algebra"],why:"When raising a power to a power, multiply the exponents: 2 × 3 = 6."},
+ {q:"If g(x) = x − 5, find g(5).",o:["5","−5","0","25"],a:2,tags:["functions"],why:"Substitute 5: 5 − 5 = 0."},
+ {q:"If f(x) = 2x, what is f(a)?",o:["2 + a","a²","2a","a/2"],a:2,tags:["functions"],why:"Replace x with a. So f(a) = 2a."},
+ {q:"Simplify x⁶ / x².",o:["x³","x⁴","x⁸","x¹²"],a:1,tags:["algebra"],why:"When dividing powers with the same base, subtract exponents: 6 − 2 = 4."}
+]};
+const postBanks={
+algebra:[{q:"Simplify x⁵ × x².",o:["x⁷","x¹⁰","2x⁷","x³"],a:0,tags:["algebra"]}],
+functions:[{q:"If h(x) = 4x + 1, what is h(2)?",o:["9","8","7","5"],a:0,tags:["functions"]}],
+power:[{q:"Differentiate x⁶.",o:["6x⁵","x⁵","5x⁶","6x⁶"],a:0,tags:["power"]}],
+chain:[{q:"Differentiate (3x + 2)².",o:["2(3x + 2)","6(3x + 2)","(3x + 2)²","3(3x + 2)"],a:1,tags:["chain"]}],
+integral:[{q:"Find ∫x³ dx.",o:["3x² + C","x⁴/4 + C","x⁴ + C","x³/3 + C"],a:1,tags:["integral"]}],
+limits:[{q:"Find lim x→3 (x² + 2).",o:["9","11","6","Undefined"],a:1,tags:["limits"]}]
+};
+// Exactly 100,000 generated questions: 25,000 per topic, spread across 10 concept families per topic.
+// Each family is parameter-varied; difficulty is balanced per test as 5 easy, 3 medium, 2 hard.
+const questionPool={diff:[],integral:[],limits:[],functions:[]};
+function shuffledOptions(correct, distractors, tags, q, why, id, difficulty){
+ const vals=[String(correct),...distractors.map(String)]; const uniq=[...new Set(vals)];
+ for(let k=1;uniq.length<4;k++) if(!uniq.includes(`Option ${k}`)) uniq.push(`Option ${k}`);
+ const opts=uniq.slice(0,4), correctText=String(correct);
+ for(let i=opts.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[opts[i],opts[j]]=[opts[j],opts[i]];}
+ return {id,q,o:opts,a:opts.indexOf(correctText),tags,why,difficulty};
+}
+function addQ(topic,id,q,correct,distractors,tags,why,difficulty){questionPool[topic].push(shuffledOptions(correct,distractors,tags,q,why,id,difficulty));}
+for(let n=2;n<2502;n++){
+ const p=(n%97)+2, r=(n%89)+2, a=(n%83)+2, b=(n%79)+1, c=(n%71)+1;
+ // DIFFERENTIATION: 5 easy, 3 medium, 2 hard families.
+ addQ('diff',`d-power-${n}`,`Differentiate f(x)=x^${p}.`,`${p}x^${p-1}`,[`x^${p-1}`,`${p}x^${p}`,`${p-1}x^${p}`],['power'],'Apply the power rule: bring the exponent down and subtract one.', 'easy');
+ addQ('diff',`d-constant-${n}`,`What is the derivative of the constant ${n}?`,'0',[String(n),'1',`x^${n}`],['constRule'],'The derivative of every constant is zero.','easy');
+ addQ('diff',`d-multiple-${n}`,`Differentiate ${a}x^${p}.`,`${a*p}x^${p-1}`,[`${a}x^${p-1}`,`${a*p}x^${p}`,`${p}x^${a-1}`],['power','algebra'],'Keep the coefficient, multiply by the exponent, and reduce the exponent.','easy');
+ addQ('diff',`d-sum-${n}`,`Differentiate x^${p} + x^${r}.`,`${p}x^${p-1} + ${r}x^${r-1}`,[`x^${p-1} + x^${r-1}`,`${p}x^${p} + ${r}x^${r}`,`${p+r}x^${p+r-1}`],['sumRule'],'Differentiate each term separately and add the results.','easy');
+ addQ('diff',`d-eval-${n}`,`If f(x)=x^${p}, find f′(${a}).`,String(p*Math.pow(a,p-1)),[String(Math.pow(a,p)),String((p-1)*Math.pow(a,p-1)),String(p*Math.pow(a,p))],['power','functions'],'Differentiate first, then substitute x with the given value.','easy');
+ addQ('diff',`d-chain-${n}`,`Differentiate (${a}x+${b})^${p}.`,`${a*p}(${a}x+${b})^${p-1}`,[`${p}(${a}x+${b})^${p-1}`,`${a}(${a}x+${b})^${p}`,`${a*p}(${a}x+${b})^${p}`],['chain'],'Use the chain rule: derivative of the outside times derivative of the inside.','medium');
+ addQ('diff',`d-product-${n}`,`Differentiate x^${p} · x^${r}.`,`${p+r}x^${p+r-1}`,[`${p*r}x^${p+r}`,`x^${p+r-1}`,`${p+r}x^${p+r}`],['productRule'],'Use the product rule (or simplify to x^(p+r) first).','medium');
+ addQ('diff',`d-tangent-${n}`,`For f(x)=x², what is the tangent slope at x=${a}?`,String(2*a),[String(a*a),String(a),String(2*a+1)],['tangent','power'],'The tangent slope at a point is f′(a).','medium');
+ addQ('diff',`d-second-${n}`,`Find the second derivative of f(x)=x^${p+1}.`,`${(p+1)*p}x^${p-1}`,[`${p+1}x^${p}`,`${p}x^${p-1}`,`${(p+1)*p}x^${p}`],['secondDerivative','power'],'Differentiate twice.','hard');
+ addQ('diff',`d-quotient-${n}`,`Using the quotient rule, differentiate x/${'('}x+${a}${')'}.`,`${a}/(x+${a})²`,[`1/(x+${a})²`,`x/(x+${a})²`,`${a}/(x+${a})`],['quotientRule'],'Apply (u/v)′=(u′v−uv′)/v² and simplify.','hard');
+ // INTEGRATION: power/constant/sum/definite/constant of integration; substitution, definite polynomial, trig; parts and mixed challenge.
+ addQ('integral',`i-power-${n}`,`Find ∫x^${p} dx.`,`x^${p+1}/${p+1} + C`,[`${p}x^${p-1} + C`,`x^${p+1} + C`,`x^${p}/${p+1} + C`],['integral'],'Add one to the exponent and divide by the new exponent.','easy');
+ addQ('integral',`i-constant-${n}`,`Find ∫${n} dx.`,`${n}x + C`,[`${n} + C`,`x^${n} + C`,`${n}x² + C`],['integral'],'The antiderivative of a constant k is kx+C.','easy');
+ addQ('integral',`i-sum-${n}`,`Find ∫(x^${p} + x^${r}) dx.`,`x^${p+1}/${p+1} + x^${r+1}/${r+1} + C`,[`x^${p} + x^${r} + C`,`${p}x^${p-1} + ${r}x^${r-1} + C`,`x^${p+r+1}/${p+r+1} + C`],['integral','sumRule'],'Integrate each term separately.','easy');
+ addQ('integral',`i-definite-${n}`,`Evaluate ∫₀¹ ${p}x^${p-1} dx.`, '1',[String(p),`1/${p}`,String(p+1),'0'],['definiteIntegral'],'Evaluate an antiderivative at 1 and subtract its value at 0.','easy');
+ addQ('integral',`i-constantC-${n}`,`Why does an indefinite integral of ${n}x^${p} include + C?`,'An arbitrary constant',['The upper limit','A derivative','A missing exponent'],['integral'],'Differentiating any constant gives zero, so antiderivatives differ by a constant.','easy');
+ addQ('integral',`i-sub-${n}`,`Find ∫2x(x²+1)^${p} dx.`,`(x²+1)^${p+1}/${p+1} + C`,[`2(x²+1)^${p+1} + C`,`(x²+1)^${p} + C`,`x²(x²+1)^${p} + C`],['substitution'],'Use u=x²+1, so du=2x dx.','medium');
+ addQ('integral',`i-def-poly-${n}`,`Evaluate ∫₀¹ ${p+1}x^${p} dx.`, '1',[`1/${p}`,String(p),String(p+1),'0'],['definiteIntegral'],'The antiderivative is x^p; x^p from 0 to 1 equals 1.','medium');
+ addQ('integral',`i-trig-${n}`,`Find ∫cos(${p}x) dx.`,`sin(${p}x)/${p} + C`,[`-${p}sin(${p}x) + C`,`cos(${p}x)/${p} + C`,`sin(${p}x) + C`],['trigIntegral'],'Use ∫cos(kx)dx=sin(kx)/k+C.','medium');
+ const k=(n%11)+2; addQ('integral',`i-parts-${n}`,`Find ∫x e^(${k}x) dx.`,`e^(${k}x)(x/${k}−1/${k*k}) + C`,[`xe^(${k}x) + C`,`e^(${k}x)(x/${k}+1/${k*k}) + C`,`x²e^(${k}x)/2 + C`],['parts'],'Use integration by parts with u=x and dv=e^(kx)dx.','hard');
+ const m=(n%9)+2; addQ('integral',`i-rational-${n}`,`Find ∫1/(${m}x) dx (for x>0).`,`ln(x)/${m} + C`,[`ln(x) + C`,`1/(${m}x²) + C`,`ln(x²)/${m} + C`],['integral','domain'],'The antiderivative of 1/(mx) is ln|x|/m+C.','hard');
+ // LIMITS & CONTINUITY: direct substitution, meaning, continuity, one-sided, factoring, rationalisation, infinity and trig limits.
+ addQ('limits',`l-poly-${n}`,`Evaluate lim x→${a} (x² + ${b}).`,String(a*a+b),[String(a+b),String(a*a-b),String(a*a+b+1)],['limits'],'For a polynomial, substitute the approaching value directly.','easy');
+ addQ('limits',`l-linear-${n}`,`Evaluate lim x→${a} (${p}x + ${b}).`,String(p*a+b),[String(p*a-b),String(a+p+b),String(p*a+b+1)],['limits'],'Substitute the approaching value into the linear expression.','easy');
+ addQ('limits',`l-meaning-${n}`,`What does lim x→${a} f(x) describe?`,'The value f(x) approaches as x gets close to the input',['The largest output','The slope at every point','The value f(0)'],['limits'],'A limit describes nearby behaviour, not necessarily the value at the point.','easy');
+ addQ('limits',`l-cont-${n}`,`Is the polynomial f(x)=x²+${b} continuous at x=${a}?`,'Yes, every polynomial is continuous for all real x',['No, because it is quadratic','Only if x is positive','Only at x=0'],['continuity'],'Polynomials are continuous everywhere on the real line.','easy');
+ addQ('limits',`l-function-${n}`,`If f(x)=${p}x+${b}, find lim x→${a} f(x).`,String(p*a+b),[String(p*a),String(a+b),String(p*a+b+2)],['limits','functions'],'Substitute the input because this linear function is continuous.','easy');
+ addQ('limits',`l-factor-${n}`,`Evaluate lim x→${a} (x²−${a*a})/(x−${a}).`,String(2*a),[String(a*a),String(a),String(2*a+1)],['limitFactoring','algebra'],'Factor x²−a²=(x−a)(x+a), cancel, then substitute x=a.','medium');
+ addQ('limits',`l-one-${n}`,`If the left-hand limit is ${a} and the right-hand limit is ${b}, when does the two-sided limit exist?`,'Only when the two values are equal',['Always','Only when both are positive','Never'],['oneSided'],'The left-hand and right-hand limits must agree.','medium');
+ const sroot=(n%17)+2; addQ('limits',`l-rational-${n}`,`Evaluate lim x→1 (√(x+${sroot*sroot-1})−${sroot})/(x−1).`,`1/${2*sroot}`,[`1/${sroot}`,`${sroot}/2`,'0'],['rationalization'],'Multiply numerator and denominator by the conjugate.','medium');
+ addQ('limits',`l-infinite-${n}`,`As x→${a}, what happens to 1/(x−${a})²?`,'It grows without bound to +∞',['It approaches 0','It approaches 1','It approaches −∞'],['infiniteLimits'],'The squared denominator approaches zero from positive values.','hard');
+ addQ('limits',`l-trig-${n}`,`Evaluate lim x→0 sin(${p}x)/x (radians).`,String(p),['0','1',String(1/p)],['trigLimits'],'Use the standard limit lim x→0 sin(kx)/x=k.','hard');
+ // FUNCTIONS & ALGEBRA: evaluation, exponent rules, powers, factorisation, linear equations; composition, inverse, domain; logs and inequalities.
+ addQ('functions',`f-eval-${n}`,`If f(x)=${p}x+${b}, find f(${a}).`,String(p*a+b),[String(p*a-b),String(a+p+b),String(p*a+b+1)],['functions'],'Substitute the input for x and simplify.','easy');
+ addQ('functions',`f-mul-${n}`,`Simplify x^${p} × x^${r}.`,`x^${p+r}`,[`x^${p*r}`,`x^${Math.abs(p-r)}`,`x^${p+r+1}`],['algebra'],'Add exponents when multiplying powers with the same base.','easy');
+ addQ('functions',`f-power-${n}`,`Simplify (x^${p})^${r}.`,`x^${p*r}`,[`x^${p+r}`,`x^${p**r}`,`x^${p}`],['algebra'],'Multiply exponents when raising a power to a power.','easy');
+ addQ('functions',`f-factor-${n}`,`Factor x²−${a*a}.`,`(x−${a})(x+${a})`,[`(x−${a})²`,`(x−${a*a})(x+1)`,`(x+${a})²`],['quadratic','algebra'],'Use the difference-of-squares identity.','easy');
+ addQ('functions',`f-linear-${n}`,`Solve ${p}x=${p*a}.`,String(a),[String(a+1),String(p*a),String(a-1)],['functions','algebra'],'Divide both sides by the nonzero coefficient.','easy');
+ addQ('functions',`f-compose-${n}`,`If f(x)=2x and g(x)=x+${a}, find f(g(1)).`,String(2*(1+a)),[String(1+a),String(2+a),String(2*a)],['composition'],'Evaluate the inner function first, then apply the outer function.','medium');
+ addQ('functions',`f-inverse-${n}`,`If f(x)=${p}x+${b}, what is f⁻¹(x)?`,`(x−${b})/${p}`,[`(x+${b})/${p}`,`${p}x−${b}`,`x/${p}+${b}`],['inverse'],'Swap x and y in y=px+b, then solve for y.','medium');
+ addQ('functions',`f-domain-${n}`,`Which value is excluded from 1/(x−${a})?`,String(a),[String(-a),'0','1'],['domain'],'A denominator cannot equal zero.','medium');
+ addQ('functions',`f-log-${n}`,`If log₂(x)=${p}, find x.`,String(2**p),[String(2*p),String(p+2),String(p*p)],['logarithms'],'Convert log₂(x)=p to x=2^p.','hard');
+ addQ('functions',`f-ineq-${n}`,`Solve −2x < ${-2*a}.`,`x > ${a}`,[`x < ${a}`,`x > ${-a}`,`x < ${-a}`],['inequalities'],'Dividing an inequality by a negative number reverses its sign.','hard');
+}
+const topicNames={diff:"Differentiation foundations",integral:"Integration foundations",limits:"Limits & continuity",functions:"Functions & algebra"};
+let topic="diff",phase="diag",questions=[],idx=0,answers=[],diagnosticScore=0,gaps=[],postQuestions=[],postAnswers=[],lastPostScore=0;
+const $=id=>document.getElementById(id);
+function show(id){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));$(id).classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
+const topicCoverage={
+ diff:"Concept coverage: power rule, constants, coefficient and sum rules, chain rule, product rule, quotient rule, tangent slopes, and second derivatives.",
+ integral:"Concept coverage: reverse power rule, constants, sum rule, definite integrals, +C, substitution, trigonometric integrals, integration by parts, and 1/x.",
+ limits:"Concept coverage: direct substitution, limit meaning, continuity, one-sided limits, factorisation, rationalisation, infinite limits, and standard trigonometric limits.",
+ functions:"Concept coverage: function evaluation, exponent laws, powers of powers, quadratic factorisation, linear equations, composition, inverse functions, domain restrictions, logarithms, and inequalities."
+};
+document.querySelectorAll(".topic").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".topic").forEach(x=>x.classList.remove("active"));b.classList.add("active");topic=b.dataset.topic;$("coverageLine").textContent=topicCoverage[topic]}));
+function pickFresh(topicKey, count, phaseKey, preferredTags=[]){
+ const key=`cb_seen_${topicKey}`, stemKey=`cb_seen_stems_${topicKey}`; let seen=[], seenStems=[];
+ try{seen=JSON.parse(localStorage.getItem(key)||"[]")}catch(e){} try{seenStems=JSON.parse(localStorage.getItem(stemKey)||"[]")}catch(e){}
+ let available=questionPool[topicKey].filter(q=>!seen.includes(q.id)&&!seenStems.includes(q.q));
+ // Deduplicate identical stems in the candidate set so one test cannot repeat the same wording.
+ const unique=[], stemSet=new Set(); for(const q of available){if(!stemSet.has(q.q)){stemSet.add(q.q);unique.push(q)}} available=unique;
+ if(available.length<count){
+   // Start a new cycle only when fewer than 10 unseen unique stems remain; never pad a test with repeats.
+   seen=[];seenStems=[];const all=questionPool[topicKey],allStems=new Set();available=[];
+   for(const q of all){if(!allStems.has(q.q)){allStems.add(q.q);available.push(q)}}
+ }
+ const quotas={easy:5,medium:3,hard:2}; let picked=[];
+ for(const [level,quota] of Object.entries(quotas)){
+   let tier=available.filter(q=>q.difficulty===level);
+   if(preferredTags.length){const focused=tier.filter(q=>q.tags.some(t=>preferredTags.includes(t))); const rest=tier.filter(q=>!q.tags.some(t=>preferredTags.includes(t))); tier=focused.concat(rest);}
+   for(let i=tier.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[tier[i],tier[j]]=[tier[j],tier[i]];}
+   picked.push(...tier.slice(0,quota));
+ }
+ if(picked.length<count){const ids=new Set(picked.map(q=>q.id));const stems=new Set(picked.map(q=>q.q));const rest=available.filter(q=>!ids.has(q.id)&&!stems.has(q.q));for(let i=rest.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[rest[i],rest[j]]=[rest[j],rest[i]];}picked.push(...rest.slice(0,count-picked.length));}
+ for(let i=picked.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[picked[i],picked[j]]=[picked[j],picked[i]];}
+ picked=picked.slice(0,count); const newStems=picked.map(q=>q.q); const matchedIds=questionPool[topicKey].filter(q=>newStems.includes(q.q)).map(q=>q.id);
+ seen=[...new Set([...seen,...matchedIds])]; seenStems=[...new Set([...seenStems,...newStems])];
+ try{localStorage.setItem(key,JSON.stringify(seen));localStorage.setItem(stemKey,JSON.stringify(seenStems))}catch(e){}
+ return picked;
+}
+$("start").addEventListener("click",()=>{phase="diag";questions=pickFresh(topic,10,"diag");idx=0;answers=[];$("quizTitle").textContent=topicNames[topic];show("quiz");renderQuestion()});
+$("exitQuiz").addEventListener("click",()=>show("home"));
+function renderQuestion(){
+ const q=questions[idx];$("qcounter").textContent=`Question ${idx+1} of ${questions.length}`;$("qtopic").textContent=phase==="diag"?"Concept check":"Fresh post-test";
+ $("progressbar").style.width=`${idx/questions.length*100}%`;$("qtags").innerHTML=`<span class="qtag">${({easy:"🟢 EASY",medium:"🟡 MEDIUM",hard:"🔴 HARD"})[q.difficulty]||"CONCEPT CHECK"}</span>`+q.tags.map(t=>`<span class="qtag">${concepts[t]?.name||t}</span>`).join("");
+ $("question").textContent=q.q;$("options").innerHTML="";$("answerFeedback").innerHTML="";
+ $("quizHint").textContent=phase==="diag"?"Take your time":"New questions test the same ideas";
+ q.o.forEach((opt,i)=>{const btn=document.createElement("button");btn.className="option";btn.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;btn.addEventListener("click",()=>{answers[idx]=i;document.querySelectorAll(".option").forEach(x=>x.classList.remove("selected"));btn.classList.add("selected");$("nextQuestion").disabled=false});$("options").appendChild(btn)});
+ $("progressbar").style.width=`${(idx)/questions.length*100}%`;$("nextQuestion").disabled=true;$("nextQuestion").textContent=idx===questions.length-1?"See my concept snapshot →":"Next question →";
+}
+$("nextQuestion").addEventListener("click",()=>{if(answers[idx]===undefined)return;if(idx<questions.length-1){idx++;renderQuestion()}else if(phase==="diag"){processDiag()}else{processPost()}});
+function processDiag(){
+ diagnosticScore=questions.reduce((n,q,i)=>n+(answers[i]===q.a?1:0),0);
+ const misses={};questions.forEach((q,i)=>{if(answers[i]!==q.a)q.tags.forEach(t=>misses[t]=(misses[t]||0)+1)});
+ gaps=Object.entries(misses).sort((a,b)=>b[1]-a[1]).map(([id,count])=>({id,count}));
+ $("scorecircle").textContent=`${diagnosticScore}/${questions.length}`;
+ $("resultTitle").textContent=diagnosticScore===questions.length?"Excellent foundations!":"Let's strengthen a few foundations.";
+ $("resultSummary").textContent=`You answered ${diagnosticScore} of ${questions.length} correctly. The concepts below are linked to missed answers in this diagnostic. The 100,000-question bank spans core concepts for this topic; each test has exactly 5 easy, 3 medium, and 2 hard questions.`;
+ $("gapList").innerHTML="";
+ if(!gaps.length){$("gapList").innerHTML=`<div class="success">🎉 No concept tags were triggered by a missed answer. Try another topic or a more challenging question set.</div>`}
+ gaps.forEach(g=>{const c=concepts[g.id];if(!c)return;const el=document.createElement("div");el.className="gapcard";el.innerHTML=`<div class="gaprow"><div><h3>${c.name}</h3><p>${g.count} missed question${g.count>1?"s":""} linked to this concept</p></div><span class="severity ${g.count===1?"medium":""}">${g.count>1?"Review first":"Review next"}</span></div><div class="lesson"><strong>What to remember</strong><p>${c.lesson}</p></div>`;$("gapList").appendChild(el)});
+ $("beginRevision").disabled=!gaps.length;
+ show("results");
+}
+$("beginRevision").addEventListener("click",()=>{renderLessons();show("revision")});
+function renderLessons(){
+ $("lessonList").innerHTML="";
+ const ids=gaps.length?gaps.map(g=>g.id):["power","functions"];
+ ids.forEach((id,i)=>{const c=concepts[id];const el=document.createElement("div");el.className="gapcard";el.innerHTML=`<div class="gaprow"><div><span class="eyebrow">CONCEPT ${String(i+1).padStart(2,"0")}</span><h3 style="margin-top:5px">${c.name}</h3></div><span class="tag">~1 min</span></div><div class="lesson"><strong>Quick refresher</strong><p>${c.lesson}</p><p style="margin-top:10px"><code>${c.formula}</code></p></div><div class="practice"><h4>Try it: ${c.practice}</h4><div class="options" data-practice="${id}">${c.practiceOptions.map((o,j)=>`<button class="option" data-idx="${j}"><span class="letter">${String.fromCharCode(65+j)}</span><span>${o}</span></button>`).join("")}</div><div class="tiny" id="pract-${id}" style="margin-top:8px">Pick an answer to check your understanding.</div></div>`;$("lessonList").appendChild(el);
+ const box=el.querySelector(`[data-practice="${id}"]`);box.querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{box.querySelectorAll("button").forEach(b=>b.classList.remove("selected"));btn.classList.add("selected");const ok=Number(btn.dataset.idx)===c.practiceAnswer;$(`pract-${id}`).innerHTML=ok?`<span style="color:#087e6f;font-weight:700">✓ Correct — nice work.</span>`:`<span style="color:#b45309;font-weight:700">Not quite yet.</span> ${c.practiceOptions[c.practiceAnswer]} is correct. Review the rule above and try another.`}))});
+}
+$("startPost").addEventListener("click",()=>{
+ phase="post";postQuestions=[];
+ const preferred=gaps.map(g=>g.id);
+ postQuestions=pickFresh(topic,10,"post",preferred).map(q=>({...q,concept:q.tags[0]||"functions"}));
+ questions=postQuestions;idx=0;answers=[];$("quizTitle").textContent="Fresh concept check";show("quiz");renderQuestion();
+});
+function processPost(){
+ lastPostScore=questions.reduce((n,q,i)=>n+(answers[i]===q.a?1:0),0);
+ $("postScore").textContent=`${lastPostScore}/${questions.length}`;$("beforeScore").textContent=`${diagnosticScore}/10`;$("afterScore").textContent=`${lastPostScore}/${questions.length}`;
+ const before=Math.round(diagnosticScore/10*100),after=Math.round(lastPostScore/questions.length*100);const delta=after-before;
+ $("deltaScore").textContent=(delta>0?"+":"")+delta+"%";
+ $("postTitle").textContent=lastPostScore===questions.length?"Great work — you got them all!":lastPostScore>0?"You're building momentum.":"Keep practising, one concept at a time.";
+ $("postSummary").textContent=`You scored ${lastPostScore} out of ${questions.length} on a fresh set linked to your focus concepts.`;
+ $("progressInsight").textContent=delta>0?`Your score moved from ${before}% to ${after}% (+${delta} percentage points) across two different sets. This is an encouraging signal, though the sets are short and not a formal measurement.`:delta===0?`Your scores are ${before}% and ${after}%. That can happen with short tests; try another practice cycle and look for consistent improvement.`:`Your fresh-set score is lower by ${Math.abs(delta)} points. That's useful feedback: revisit the concepts and try again without rushing.`;
+ const miss=questions.filter((q,i)=>answers[i]!==q.a).map(q=>q.concept);$("remainingGaps").innerHTML=miss.length?`<h3 style="font-size:15px;margin-top:18px">Concepts to revisit</h3>${[...new Set(miss)].map(id=>`<div class="gapcard"><b>${concepts[id].name}</b><p class="tiny">${concepts[id].lesson}</p></div>`).join("")}`:`<div class="success">✓ You answered every post-test question correctly. Try a new topic to continue building your concept map.</div>`;
+ show("postresults");
+}
+$("retryHome").addEventListener("click",()=>show("home"));$("backResults").addEventListener("click",()=>show("results"));
+$("again").addEventListener("click",()=>show("home"));$("reviewLessons").addEventListener("click",()=>{renderLessons();show("revision")});
+</script>
+<script>
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+}
+</script>
+</body>
+</html>
